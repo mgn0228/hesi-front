@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+
+/*─────────────────────────────────────────────────
+										초기화
+─────────────────────────────────────────────────*/
+html{}
+body{margin:0;padding:0;font-size:13px;font-family:var(--font-family);background:#fff;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+html,body{-webkit-overflow-scrolling:touch;}
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img{margin:0;padding:0;border:0}
+h1, h2, h3, h4, h5, h6{font-size:1em;font-family:inherit;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block}
+ol,ul,dl,dt,dd{margin:0;padding:0;list-style:none}
+legend{position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+label, input, button, select, img{vertical-align:middle;font-size:100%}
+input, button{margin:0;padding:0;font-size:100%}
+button, input[type="submit"]{cursor:pointer;outline:0;}
+button, input[type="submit"]:not([class*='_btn']){font-family:inherit;}
+button{cursor:pointer;background:transparent;color:inherit;border:0;}
+textarea, select{font-size:1em}
+select{margin:0}
+table{border-collapse:collapse;border-spacing:0;}
+p{margin:0;padding:0;word-break:break-all}
+hr{display:none}
+pre{overflow-x:scroll;font-size:1.1em;font-family:inherit;}
+i{font-style:normal;}
+img{max-width:100%;}
+a{color:inherit;text-decoration:none}
+*, :after, :before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-text-size-adjust:none;/*피봇시 글자커짐 방지 */-webkit-overflow-scrolling:touch;}
+input, button, textarea, select{font-family:inherit;}
+a{text-decoration:none;outline:0;color:inherit;}
+a:link, a:visited {text-decoration:none}
+a:hover, a:focus, a:active {text-decoration:none;}
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+*:before, *:after{display:inline-block;vertical-align:middle;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+
+
+
+
+/*─────────────────────────────────────────────────
+										스크롤바
+─────────────────────────────────────────────────*/
+::-webkit-scrollbar{width:8px;height:8px;}
+::-webkit-scrollbar-thumb{cursor:pointer;background:#57e1e6;}
+::selection{background-color:rgba(0,0,0,0.3);color:#fff;}
+-webkit-::selection{background-color:rgba(0,0,0,0.3);color:#fff;}
+::-moz-selection{background-color:rgba(0,0,0,0.3);color:#fff;}
+
+
+.scrollbar-small::-webkit-scrollbar{width:6px;height:6px;}
+.scrollbar-gray::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.2);}

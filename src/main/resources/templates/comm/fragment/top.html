@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<th:block th:fragment="topFragment">
+    <section id="topSection">
+
+        <div class="topSec01">
+            <!--<div id="topSec_sel">
+                <select id="project-list" onchange="changeProject(this)"></select>
+                <button type="button" style="display: none;" id="project-add-btn" class="btnAdd pop-inline" data-href="#_pop_project_add" onclick="clickAddProject()">프로젝트 생성</button>
+                <button type="button" style="display: none;" id="user-add-btn" class="btnAdd" onclick="formSubmit('/signup')">회원 추가</button>
+            </div>-->
+        </div>
+
+        <div class="topSec02">
+            <div class="logo media-mobile-only" onclick="formSubmit('/')">SAFFY</div>
+            <!--<div class="searchContainer">
+                <form name="" action="" method="post">
+                    <input type="text" name="" value="" class="inp">
+                    <button type="button" class="btn">검색</button>
+                </form>
+            </div>-->
+            <!--<div class="alarm-wrap">
+                <button type="button" class="icon_alarm" id="my_alarm_icon">알림아이콘</button>
+                <div class="alarmContainer">
+                    <div class="head">
+                        알림 <button type="button" class="icon_closer">알림닫기</button>
+                    </div>
+                    <div class="body">
+                        <ul id="my_alarm" class="scroll-auto scrollbar-small scrollbar-gray" style="max-height:250px;"></ul>
+                    </div>
+                    <div class="footer" id="my_alarm_footer">
+                        <div class="btnSet">
+                            <a href="javascript:removeAlarm('READ');">읽은 알림 삭제</a>
+                            <a href="javascript:removeAlarm('ALL');">전체 삭제</a>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!--<span class="mobile_search_opener media-mobile-only"></span>-->
+            <span class="mobile_nav_opener media-mobile-only"></span>
+            <div class="mbContainer">
+                <a href="javascript:;" class="toggleClass" data-target="#mb-menu"><img th:src="@{${session.userImg}}" class="mb_img">[[${session.userName}]]님</a>
+                <div id="mb-menu" class="toggleContainer">
+                    <a href="/mypage" class="color-blue">프로필 수정</a>
+                    <a href="javascript:logout();" class="_btn/line icon_send_email">로그아웃</a>
+                </div>
+                <!--<div class="weather-wrap media-mobile-only">
+                    <ul>
+                        <li><img src="img/sun-icon.svg" alt="" class="sun-icon"><span>26°C</span></li>
+                        <li><img src="img/windspeed-icon.svg" alt="" class="windspeed-icon"><span>바람 : 남  2.1m/s</span></li>
+                        <li><img src="img/humidity-icon.svg" alt="" class="humidity-icon"><span>습도 : 80%</span></li>
+                        <li><img src="img/rainfall-icon.svg" alt="" class="rainfall-icon"><span>강수량 : -mm</span></li>
+                    </ul>
+                </div>-->
+            </div>
+            <span class="color-gray media-pc-only" id="top-selected-project"></span>
+        </div>
+    </section>
+</th:block>

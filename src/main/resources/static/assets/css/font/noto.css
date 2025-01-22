@@ -1,0 +1,17 @@
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+:root{
+	--noto:'Noto Sans KR', sans-serif;
+}
+
+/*─────────────────────────────────────────────────
+											font
+─────────────────────────────────────────────────*/
+[class^="noto"], [class*="noto"]{font-family:'Noto Sans KR', sans-serif !important;}
+.noto100{font-weight:100 !important;}
+.noto200{font-weight:200 !important;}
+.noto300{font-weight:300 !important;}
+.noto400{font-weight:400 !important;}
+.noto500{font-weight:500 !important;}
+.noto600{font-weight:600 !important;}
+.noto700{font-weight:700 !important;}

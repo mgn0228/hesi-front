@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/html">
+
+    <!-- head -->
+    <th:block th:insert="~{comm/fragment/head :: headFragment}"></th:block>
+
+    <body>
+        <div class="fadeIn-loader"></div>
+
+        <div id="wrapper">
+            <!-- header -->
+            <th:block th:insert="~{comm/fragment/header :: headerFragment}"></th:block>
+
+            <div id="pageContainer" class="h-730">
+                <!-- 상단 -->
+                <th:block th:insert="~{comm/fragment/top :: topFragment}"></th:block>
+
+                <!-- 메인 컨텐츠 -->
+                <th:block layout:fragment="content"></th:block>
+                <th:block layout:fragment="popup"></th:block>
+            </div>
+        </div>
+        <!-- 푸터 -->
+        <th:block th:insert="~{comm/fragment/footer :: footerFragment}"></th:block>
+        <script th:src="@{/assets/js/controls/comm/project.js}" type="text/javascript"></script>
+    </body>
+
+    <script th:inline="javascript">
+        const PROJECT_ID = String([[${session.projectId}]]);
+        const COMPANY_ID = String([[${session.companyId}]]);
+        const USER_ID = String([[${session.userId}]]);
+        const USER_AUTH = String([[${session.userAuth}]]);
+        const TOKEN = String([[${session.accessToken}]]);
+        const MENU = String([[${menu}]]);
+    </script>
+</html>

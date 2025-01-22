@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<div th:fragment="printFragment">
+    <article class="layer-popup print_doc" id="_pop_print_doc1">
+        <button type="button" class="pop-closer"></button>
+        <div class="popContainer" style="width:210mm;">
+
+            <button class="btn_print" onclick="docPrint('doc_type01');">인쇄하기</button>
+
+            <div class="inner" style="border-radius:0;height:100%;padding:0;/*margin-top:30px;*/">
+
+                <div id="doc_type01" class="print_doc_wrap">
+                    <h1>작업허가서(Permit To Work)</h1>
+                    <div class="tbl_wrap">
+                        <table>
+                            <colgroup>
+                                <col width="11%">
+                                <col width="13%">
+                                <col width="11%">
+                                <col width="13%">
+                                <col width="">
+                                <col width="13%">
+                                <col width="13%">
+                                <col width="13%">
+                                <col width="13%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>업체명</th>
+                                <td class="p_project p_data_area"></td>
+                                <th>작성일</th>
+                                <td class="p_created_at p_data_area"></td>
+                                <th rowspan="3">결재</th>
+                                <th class="p_approverType01"></th>
+                                <th class="p_approverType02"></th>
+                                <th class="p_approverType03"></th>
+                                <th class="p_approverType04"></th>
+                            </tr>
+                            <tr>
+                                <th>장소</th>
+                                <td class="p_place p_data_area"></td>
+                                <th>작성자</th>
+                                <td class="p_user_name p_data_area"></td>
+                                <td rowspan="2" class="p_approverInfo01 img-height45-fix p_data_area"></td>
+                                <td rowspan="2" class="p_approverInfo02 img-height45-fix p_data_area"><!--2023-10-10<br>유저1--></td>
+                                <td rowspan="2" class="p_approverInfo03 img-height45-fix p_data_area"><!--2023-10-10<br>유저1--></td>
+                                <td rowspan="2" class="p_approverInfo04 img-height45-fix p_data_area"><!--2023-10-10<br>유저1--></td>
+                            </tr>
+                            <tr>
+                                <th>허가기간</th>
+                                <td colspan="3" class="p_permissionPeriod p_data_area">2023. 07. 31. ~ 2023. 08. 04.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <br>
+
+                    <h2>1. 허가 작업내용</h2>
+                    <div class="tbl_wrap">
+                        <table class="td3">
+                            <colgroup>
+                                <col style="width:9.5em">
+                                <col style="width:23.5em">
+                                <col style="width:8.5em">
+                                <col style="width:10.5em">
+                                <col style="width:10.5em">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th>공사명</th>
+                                <th>작업내용</th>
+                                <th>작업팀장/반장</th>
+                                <th>투입장비</th>
+                                <th>기계기구현황</th>
+                            </tr>
+                            </thead>
+                            <tbody class="p_details p_data_area"></tbody>
+                        </table>
+                    </div>
+
+                    <br>
+
+                    <h2>2. 작업 위험성 평가</h2>
+                    <div class="tbl_wrap">
+                        <table class="td3">
+                            <colgroup>
+                                <col style="width:10.5em">
+                                <col style="width:29.5em">
+                                <col style="">
+                                <col style="">
+                                <col style="">
+                                <col style="width:19.5em">
+                            </colgroup>
+                            <thead>
+                            <tr class="th3">
+                                <th rowspan="2">작업내용</th>
+                                <th rowspan="2">위험요인</th>
+                                <th colspan="3">평가등급</th>
+                                <th rowspan="2">위험저감대책</th>
+                            </tr>
+                            <tr class="th3">
+                                <th>발생<br>빈도</th>
+                                <th>위험<br>강도</th>
+                                <th>평가<br>결과</th>
+                            </tr>
+                            </thead>
+                            <tbody class="p_risks p_data_area"></tbody>
+                        </table>
+                        <div class="tbl_summary">
+                            ※발생빈도: 상(매일 수시), 중(매주 수시), 하(월)<br>
+                            ※위험강도: 상(사망,중상), 중(경미한중,경상), 하(경상)
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <h2>3. 관리감독자(현대) 일일 확인점검</h2>
+                    <div class="tbl_wrap">
+                        <table class="td5">
+                            <colgroup>
+                                <col width="">
+                                <col width="">
+                                <col width="">
+                                <col width="">
+                                <col width="">
+                                <col width="">
+                                <col width="">
+                                <col width="">
+                            </colgroup>
+                            <thead>
+                            <tr class="p_sevenDate p_data_area"></tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><b>확인자</b></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><b>의견</b></td>
+                                <td colspan="7" class="tleft p_comment p_data_area"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="layer-popup" id="_pop_print_doc3">
+        <button type="button" class="pop-closer"></button>
+        <div class="popContainer" style="width:210mm;">
+
+            <button class="btn_print" onclick="docPrint('doc_type03');">인쇄하기</button>
+
+            <div class="inner" style="border-radius:0;height:100%;padding:0;/*margin-top:30px;*/">
+
+                <div id="doc_type03" class="print_doc_wrap">
+
+                    <h1>( <span class="p_timeType01 p_timeType">야간</span> / <span class="p_timeType02 p_timeType">조출</span> / <span class="p_timeType03 p_timeType">주말</span> ) 작업허가서(Permit To work)</h1>
+
+                    <div class="tbl_wrap auto">
+                        <table class="ml-auto">
+                            <colgroup>
+                                <col>
+                                <col style="width:8em">
+                                <col style="width:8em">
+                                <col style="width:8em">
+                                <col style="width:8em">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th rowspan="2">결<br>재</th>
+                                <th class="p_approverType01"></th>
+                                <th class="p_approverType04"></th>
+                                <th class="p_approverType05"></th>
+                                <th class="p_approverType06"></th>
+                            </tr>
+                            <tr>
+                                <td class="p_approverInfo01 img-height45-fix p_data_area"></td>
+                                <td class="p_approverInfo04 img-height45-fix p_data_area"><!--2023.09.01<br>이름2--></td>
+                                <td class="p_approverInfo05 img-height45-fix p_data_area"></td>
+                                <td class="p_approverInfo06 img-height45-fix p_data_area"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tbl_wrap" style="margin-top:2pt">
+                        <table>
+                            <colgroup>
+                                <col style="width:7em">
+                                <col style="width:15em">
+                                <col style="width:7em">
+                                <col style="width:35em">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th style="height:40pt">작성자</th>
+                                <td class="p_user_name p_data_area"></td>
+                                <th>작성일자</th>
+                                <td class="p_created_at p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th style="height:48pt">협력사명</th>
+                                <td class="p_project_name p_data_area"></td>
+                                <th>작업일시</th>
+                                <td class="p_workTime p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th style="height:58pt">작업장소</th>
+                                <td class="p_place p_data_area"></td>
+                                <th>작업인원</th>
+                                <td class="tleft p_workForce p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th style="height:58pt" class="p_approverType02"></th>
+                                <td class="p_approverInfo02 img-height45-fix p_data_area"><!--2023.08.31<br>이름1--></td>
+                                <th class="p_approverType03"></th>
+                                <td class="p_approverInfo03 img-height45-fix p_data_area"><!--2023.09.01<br>이름2--></td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">세부작업내용</th>
+                                <th colspan="2">안전조치사항</th>
+                            </tr>
+                            <tr>
+                                <td colspan="2" rowspan="3" class="tleft p_workDetail p_data_area"></td>
+                                <td colspan="2" class="tleft p_safetyPrecaution p_data_area" style="height:100pt;"></td>
+                            </tr>
+                            <tr>
+                                <th>안전팀<br>COMMENT</th>
+                                <td style="height:50pt;" class="p_approverComment06 p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>생산팀<br>COMMENT</th>
+                                <td style="height:50pt;" class="p_approverComment04 p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tleft p_check p_data_area" style="height:200pt;vertical-align:top;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="layer-popup" id="_pop_print_doc2">
+        <button type="button" class="pop-closer"></button>
+        <div class="popContainer" style="width:210mm;">
+
+            <button class="btn_print" onclick="docPrint('doc_type02');">인쇄하기</button>
+
+            <div class="inner" style="border-radius:0;height:100%;padding:0;/*margin-top:30px;*/">
+
+                <div id="doc_type02" class="print_doc_wrap">
+
+                    <div class="tbl_wrap">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col style="width:21em">
+                                <col>
+                                <col style="width:29em">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th colspan="4">
+                                    <h1 style="font-size:10pt;line-height:1.4em">
+                                        중량물 취급 계획서 [산업안전보건에 관한 규칙]<br>
+                                        Heavy Lifting and Handling and Handling Plan [Restrictions of Occupational Safety and Health]
+                                    </h1>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tleft">▣ 작업개요(Work overview)</td>
+                            </tr>
+                            <tr>
+                                <th>업체명 / 작성자<br>(Company name / Writer)</th>
+                                <td class="p_project_user p_data_area"></td>
+                                <th>공사명/작업내용<br>(Project name / Work Description)</th>
+                                <td class="p_constructionName p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>작업장소<br>(Location)</th>
+                                <td class="p_place p_data_area"></td>
+                                <th class="p_approverType02"></th>
+                                <td class="p_approverInfo02 img-hegiht27-fix p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2" class="p_approverType01"></th>
+                                <td rowspan="2" class="p_approverInfo01 img-hegiht27-fix p_data_area"><!--2023.09.01<br>이름1--></td>
+                                <th>운전원<br>(Operator)</th>
+                                <td class="p_driver p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>유도/신호수<br>(Signal Worker)</th>
+                                <td class="p_signalMan p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>작업자 명단(List of workers)</th>
+                                <td colspan="3" class="p_worker p_data_area"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--<div class="tbl_wrap" style="margin-top:2pt">
+                        <ul class="tmp_div_table">
+                            <li>
+                                <span class="flex1 bold">▣ 작업상황도 (작업장 및 작업 조건 상태) – (Work status diagram (workshop and working condition status))</span>
+                            </li>
+                            <li>
+                                <span style="width:22%">1. Area : Approx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;㎡</span>
+                                <span class="flex1 nowrap">2. Types of ground : light, soft, clay, sand, (&nbsp;&nbsp;&nbsp;)</span>
+                                <span class="flex1 nowrap">3. Ground condition: (Smooth : 0), (Cleanup required :&nbsp;&nbsp;&nbsp;)</span>
+                            </li>
+                            <li>
+                                <span  style="width:38%">4. Ground type : (concrete) / (Bearing Capacity : kg/㎡)</span>
+                                <span class="flex1 nowrap">5. Ground stop : 0° ~ 0°</span>
+                                <span style="width:24%">6. gushout water status :</span>
+                                <span class="flex1 nowrap">7. Drain Status</span>
+                            </li>
+                        </ul>
+                    </div>-->
+
+                    <div class="img_box p_work_status_file p_data_area" style="text-align:center;margin-top:2pt;height:195px;border:1px solid #3f3f3f; display: flex; align-items: center; justify-content: center;">
+                    </div>
+
+                    <div class="tbl_wrap" style="margin-top:2pt">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col style="width:21em">
+                                <col>
+                                <col style="width:30em">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td colspan="2" class="tleft bold">▣ 장비제원(Equipment specification)</td>
+                                <th>장비명/PMS등록번호<br>(Equipment name / PMS registration number)</th>
+                                <td class="p_nameNPms p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>장비번호<br>(Equipment number)</th>
+                                <td class="p_number p_data_area"></td>
+                                <th>제조사/모델명<br>(Manufacturer/model name)</th>
+                                <td class="p_manufacturerNModelName p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>투입일자<br>(Commence date)</th>
+                                <td class="p_commenceDate p_data_area"></td>
+                                <th>사용기간<br>(Duration)</th>
+                                <td class="p_durationAt p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>작업허용 경사각도<br>(Permissible angle)</th>
+                                <td class="p_angle p_data_area"></td>
+                                <th>작업(정격/허용)반경<br>(Working radias)</th>
+                                <td class="p_radius p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>자체(총길이/중량)<br>(Spec.(Total Length/weight))</th>
+                                <td class="p_totalLengthNWeight p_data_area"></td>
+                                <th>인양(정격/실작업)하중<br>(Lifting(rated/actual)load)</th>
+                                <td class="p_liftingLoad p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="tleft bold" style="color:red">※ 장비 제원 후면 첨부(Attach equipment specification detail)</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tbl_wrap" style="margin-top:2pt">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col style="width:19em">
+                                <col>
+                                <col style="width:27em">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td colspan="4" class="tleft bold">▣ 중량물 제원(Lifting specification)</td>
+                            </tr>
+                            <tr>
+                                <th>중량물명(종류)<br>(Lifting item(type))</th>
+                                <td class="p_name p_data_area"></td>
+                                <th>크기(LxHxW)/단위중량<br>(Size(LxHxW/unit weight))</th>
+                                <td class="p_sizeNWeight p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>운반거리(수직/수평)<br>(Transport distance(vertical/horizontal))</th>
+                                <td class="p_transportDistance p_data_area"></td>
+                                <th>운반(개/회)/수량/중량<br>(Transport(pieces/time)/quantity/weight)</th>
+                                <td class="p_transportUnit p_data_area"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tbl_wrap" style="margin-top:2pt">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col style="width:23em">
+                                <col>
+                                <col style="width:23em">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td colspan="4" class="tleft bold">▣ 줄걸이(슬링) / 체결장구 (Hanger(sling) / fastener)</td>
+                            </tr>
+                            <tr>
+                                <th>줄걸이 (슬링)재료<br>(Hanger (sling)material)</th>
+                                <td class="p_material p_data_area"></td>
+                                <th>줄걸이 방법<br>(Hanger method)</th>
+                                <td class="p_method p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>줄걸이 규격<br>(Hanger specification)</th>
+                                <td colspan="3" class="p_specification p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>체결장구명<br>(Tightening device name)</th>
+                                <td class="p_deviceName p_data_area"></td>
+                                <th>체결장구(규격/정격하중)<br>(Tightening device)</th>
+                                <td class="p_device p_data_area"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tbl_wrap" style="margin-top:2pt">
+                        <table>
+                            <colgroup>
+                                <col style="width:10em">
+                                <col style="width:29em">
+                                <col style="width:13em">
+                                <col style="width:41em">
+                            </colgroup>
+                            <tbody class="p_risks_tbody p_data_area"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="tbl_wrap" style="margin-top:2pt">
+                        <table>
+                            <colgroup>
+                                <col width="12.5%">
+                                <col width="12.5%">
+                                <col width="12.5%">
+                                <col width="12.5%">
+                                <col width="12.5%">
+                                <col width="12.5%">
+                                <col width="12.5%">
+                                <col width="12.5%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td class="bold p_approverType03"></td>
+                                <td class="p_approverInfo03 img-hegiht32-fix p_data_area"><!--2023.09.05<br>이름--></td>
+                                <td class="bold p_approverType04"></td>
+                                <td class="p_approverInfo04 img-hegiht32-fix p_data_area"></td>
+                                <td class="bold p_approverType05"></td>
+                                <td class="p_approverInfo05 img-hegiht32-fix p_data_area"></td>
+                                <td class="bold p_approverType06"></td>
+                                <td class="p_approverInfo06 img-hegiht32-fix p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <td class="bold">의견<br>(opinion)</td>
+                                <td colspan="7" class="tleft p_comment p_data_area"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="layer-popup print_doc" id="_pop_print_doc4">
+        <button type="button" class="pop-closer"></button>
+        <div class="popContainer" style="width:210mm;">
+            <button class="btn_print" onclick="docPrint('doc_type04');">인쇄하기</button>
+            <div class="inner" style="border-radius:0;height:100%;padding:0;/*margin-top:30px;*/">
+                <div id="doc_type04" class="print_doc_wrap">
+                    <h1>밀폐공간 작업허가서</h1>
+                    <div class="tbl_wrap font_type" style="margin-top:2pt;">
+                        <table>
+                            <colgroup>
+                                <col width="11%">
+                                <col width="13%">
+                                <col width="11%">
+                                <col width="13%">
+                                <col width="">
+                                <col width="13%">
+                                <col width="13%">
+                                <col width="13%">
+                                <col width="13%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>업체명</th>
+                                <td class="p_project p_data_area"></td>
+                                <th>작성일</th>
+                                <td class="p_createdAt p_data_area"></td>
+                                <th rowspan="3">결재</th>
+                                <th class="p_approverType01"></th>
+                                <th class="p_approverType02"></th>
+                                <th class="p_approverType03"></th>
+                                <th class="p_approverType04"></th>
+                            </tr>
+                            <tr>
+                                <th>공종</th>
+                                <td class="p_constructionType p_data_area"></td>
+                                <th>작성자</th>
+                                <td class="p_userName p_data_area"></td>
+                                <td rowspan="2" class="font_type02 p_approverInfo01 p_data_area"></td>
+                                <td rowspan="2" class="font_type02 p_approverInfo02 p_data_area"></td>
+                                <td rowspan="2" class="font_type02 p_approverInfo03 p_data_area"></td>
+                                <td rowspan="2" class="font_type02 p_approverInfo04 p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>발행일자</th>
+                                <td colspan="3" class="p_publication p_data_area"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tbl_wrap font_type" style="margin-top:2pt">
+                        <table>
+                            <colgroup>
+                                <col width="15%">
+                                <col width="35.25%">
+                                <col width="15%">
+                                <col width="35%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>작업시간</th>
+                                <td class="p_workTime p_data_area"></td>
+                                <th>작업장소</th>
+                                <td class="p_place p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>작업책임자</th>
+                                <td class="p_workLeader p_data_area"></td>
+                                <th>작업인원</th>
+                                <td class="p_workForce p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>작업내용</th>
+                                <td colspan="3" class="p_workDetail p_data_area"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tbl_wrap" style="margin-top:2pt">
+                        <table class="td4 fixheight">
+                            <colgroup>
+                                <col style="50%">
+                                <col style="width:3.91em">
+                                <col style="width:3.91em">
+                                <col style="width:3.91em">
+                                <col style="width:3.91em">
+                                <col style="width:3.91em">
+                                <col style="width:3.91em">
+                                <col style="width:3.91em">
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th rowspan="2">점검사항(양호: O, 불량: X)</th>
+                                <th colspan="7">상태</th>
+                            </tr>
+                            <tr>
+                                <th class="p_date_for_change p_data_area"></th>
+                                <th class="p_date_for_change p_data_area"></th>
+                                <th class="p_date_for_change p_data_area"></th>
+                                <th class="p_date_for_change p_data_area"></th>
+                                <th class="p_date_for_change p_data_area"></th>
+                                <th class="p_date_for_change p_data_area"></th>
+                                <th class="p_date_for_change p_data_area"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; white-space: pre;" class="p_contents p_data_area"></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tbl_wrap font_type" style="margin-top:2pt; text-align:left;">
+                        <table>
+                            <colgroup>
+                                <col width="100%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>안전지시 및 보완사항</th>
+                            </tr>
+                            <tr>
+                                <td class="p_comment p_data_area" style="white-space: pre;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tbl_wrap font_type" style="margin-top:2pt">
+                        <table>
+                            <colgroup>
+                                <col width="50%">
+                                <col width="50%">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th>특이사항</th>
+                                <th>위험 POINT</th>
+                            </tr>
+                            <tr style="text-align:left;">
+                                <td class="p_specialNote p_data_area" style="white-space: pre;"></td>
+                                <td class="p_dangerPoint p_data_area" style="white-space: pre;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="tbl_summary p_memo p_data_area" style="white-space: pre;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="layer-popup print_doc" id="_pop_print_doc5">
+        <button type="button" class="pop-closer"></button>
+        <div class="popContainer" style="width:297mm;">
+            <button class="btn_print" onclick="docPrint('doc_type05',null,null,true);">인쇄하기</button>
+            <div class="inner" style="border-radius:0;width:100%;height:100%;padding:0;">
+
+                <div id="doc_type05" class="print_doc_wrap">
+                    <h1 class="p_document_name">위험성 평가표</h1>
+                    <div class="tbl_wrap tbl01" style="width:100%;margin-top:5pt;">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <th style="width:9em">평가대상</th>
+                                <td colspan="3" style="" class="p_assessment_target p_data_area"></td>
+                                <th rowspan="3" style="width:1.2em">결<br>재</th>
+                                <th style="width:6em" class="p_approverType01">결재자1</th>
+                                <th style="width:6em" class="p_approverType02">결재자2</th>
+                                <th style="width:6em" class="p_approverType03">결재자3</th>
+                                <th style="width:6em" class="p_approverType04">결재자4</th>
+                            </tr>
+                            <tr>
+                                <th>평가일</th>
+                                <td style="width:14em" class="p_assessment_date p_data_area"></td>
+                                <th style="width:9em">작성일</th>
+                                <td style="width:14em" class="p_created_at p_data_area"></td>
+                                <td rowspan="2" style="font-size:6pt" class="p_approverInfo01 p_data_area"></td>
+                                <td rowspan="2" style="font-size:6pt" class="p_approverInfo02 p_data_area"></td>
+                                <td rowspan="2" style="font-size:6pt" class="p_approverInfo03 p_data_area"></td>
+                                <td rowspan="2" style="font-size:6pt" class="p_approverInfo04 p_data_area"></td>
+                            </tr>
+                            <tr>
+                                <th>평가자</th>
+                                <td class="p_assessment_user p_data_area"></td>
+                                <th>작성자</th>
+                                <td class="p_user_name p_data_area"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tbl_wrap tbl02" style="margin-top:13pt">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>유해·위험요인 파악</th>
+                                <th style="width:7em">위험성의 수준</th>
+                                <th>개선 대책</th>
+                                <th>개선 예정일</th>
+                                <th>개선 완료일</th>
+                                <th>담당자</th>
+                            </tr>
+                            </thead>
+                            <tbody class="p_items"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="layer-popup" id="_pop_print_all">
+        <button type="button" class="pop-closer"></button>
+        <div class="popContainer" style="width:210mm;">
+            <button class="btn_print">인쇄하기</button>
+            <div class="inner" id="print_all_main" style="border-radius:0;height:100%;padding:0;/*margin-top:30px;*/"></div>
+        </div>
+    </article>
+
+    <script type="text/javascript" src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
+    <script>
+        // 인쇄 화면 데이터 셋팅
+        function setPrintContents(type, data) {
+            // 인쇄 화면 데이터 초기화
+            $('.p_data_area').html('');
+
+            switch (type) {
+                /* 작업허가서 시작 */
+                case 'DOC_WORK_PERMIT' :
+                    let printDetailsElem = '';
+                    let printrisksElem = '';
+
+                    for(let i = 0; i < data.details.length; i++) {
+                        printDetailsElem += `
+                            <tr>
+                                <td>${data.details[i].construction_name.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.details[i].work_detail.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.details[i].worker.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.details[i].equipment.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.details[i].mechanical_equipment_status.replaceAll("\n", "<br/>")}</td>
+                            </tr>
+                        `;
+                    }
+
+                    for(let i = 0; i < data.risks.length; i++) {
+                        printrisksElem += `
+                            <tr>
+                                <td>${data.risks[i].work_detail.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.risks[i].risk_factor.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.risks[i].occurrence_frequency.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.risks[i].risk_intensity.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.risks[i].evaluation_result.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.risks[i].risk_reduction_measure.replaceAll("\n", "<br/>")}</td>
+                            </tr>
+                        `;
+                    }
+
+                    $('#doc_type01 .p_project').html(data.project_name);
+                    $('#doc_type01 .p_created_at').html(data.created_at.substring(0,10));
+
+                    // 결재 담당자 직책? 타입?
+                    $('#doc_type01 .p_approverType01').html(data.approvals[0].approver_type);
+                    $('#doc_type01 .p_approverType02').html(data.approvals[1].approver_type);
+                    $('#doc_type01 .p_approverType03').html(data.approvals[2].approver_type);
+                    $('#doc_type01 .p_approverType04').html(data.approvals[3].approver_type);
+
+                    // 결재 정보
+                    if(data.approvals[0]?.approval_date) $('#doc_type01 .p_approverInfo01').html(`${data.approvals[0].approval_date.substring(0,10)}<br>${data.approvals[0].approver_name}<br><img src="${SERVER_URL + data.approvals[0].signature}" alt=""/>`);
+                    if(data.approvals[1]?.approval_date) $('#doc_type01 .p_approverInfo02').html(`${data.approvals[1].approval_date.substring(0,10)}<br>${data.approvals[1].approver_name}<br><img src="${SERVER_URL + data.approvals[1].signature}" alt=""/>`);
+                    if(data.approvals[2]?.approval_date) $('#doc_type01 .p_approverInfo03').html(`${data.approvals[2].approval_date.substring(0,10)}<br>${data.approvals[2].approver_name}<br><img src="${SERVER_URL + data.approvals[2].signature}" alt=""/>`);
+                    if(data.approvals[3]?.approval_date) $('#doc_type01 .p_approverInfo04').html(`${data.approvals[3].approval_date.substring(0,10)}<br>${data.approvals[3].approver_name}<br><img src="${SERVER_URL + data.approvals[3].signature}" alt=""/>`);
+
+                    // 결재 코멘트
+                    let commentHtml01 = '';
+                    commentHtml01 += ((data.approvals[1]?.opinion ? data.approvals[1].approver_type + ' : ' + data.approvals[1]?.opinion : data.approvals[1].approver_type + ' : ') + '<br>');
+                    commentHtml01 += ((data.approvals[2]?.opinion ? data.approvals[2].approver_type + ' : ' + data.approvals[2]?.opinion : data.approvals[2].approver_type + ' : ') + '<br>');
+                    commentHtml01 += ((data.approvals[3]?.opinion ? data.approvals[3].approver_type + ' : ' + data.approvals[3]?.opinion : data.approvals[3].approver_type + ' : '));
+                    $('#doc_type01 .p_comment').html(commentHtml01);
+
+                    $('#doc_type01 .p_place').html(data.work_place?.place);
+                    $('#doc_type01 .p_user_name').html(data.user_name);
+
+                    let sevenDateHtml = `<th>확인일자</th>`;
+                    if(data.permission_period_start_at && data.permission_period_end_at) {
+                        $('#doc_type01 .p_permissionPeriod').html(data.permission_period_start_at + ' ~ ' + data.permission_period_end_at);
+
+                        // 최하단 일일 확인점검 날짜 셋팅
+                        let sevenDate = new Date(data.permission_period_start_at.substring(0,10));
+                        for(let i=0; i<7; i++) {
+                            sevenDateHtml += `<th>${pChangeDateFormat(sevenDate)}</th>`;
+                            sevenDate.setDate(sevenDate.getDate() + 1);
+                        }
+
+                    }else {
+                        for(let i=0; i<7; i++) {
+                            sevenDateHtml += `<th>${i+1}일 차</th>`;
+                        }
+                    }
+                    $('#doc_type01 .p_sevenDate').html(sevenDateHtml);
+
+                    $('#doc_type01 .p_details').html(printDetailsElem);
+                    $('#doc_type01 .p_risks').html(printrisksElem);
+
+                    break;
+
+                /* 작업허가서(야간/조출/주말) 시작 */
+                case 'DOC_TIME_WORK_PERMIT' :
+                    let workTimeType = '';
+                    $('.p_timeType').removeClass('check');
+
+                    switch(data.work_time_type) {
+                        case 'NIGHT'   : workTimeType = '야간'; $('#doc_type03 .p_timeType01').addClass('check'); break;
+                        case 'EARLY'   : workTimeType = '조출'; $('#doc_type03 .p_timeType02').addClass('check'); break;
+                        case 'WEEKEND' : workTimeType = '주말'; $('#doc_type03 .p_timeType03').addClass('check'); break;
+                    }
+
+                    $('#doc_type03 .p_approverType01').html(data.approvals[0].approver_type);
+                    $('#doc_type03 .p_approverType02').html(data.approvals[1].approver_type);
+                    $('#doc_type03 .p_approverType03').html(data.approvals[2].approver_type);
+                    $('#doc_type03 .p_approverType04').html(data.approvals[3].approver_type);
+                    $('#doc_type03 .p_approverType05').html(data.approvals[4].approver_type);
+                    $('#doc_type03 .p_approverType06').html(data.approvals[5].approver_type);
+
+                    // 결재 정보
+                    if(data.approvals[0]?.approval_date) $('#doc_type03 .p_approverInfo01').html(`${data.approvals[0].approval_date.substring(0,10)}<br>${data.approvals[0].approver_name}<br><img src="${SERVER_URL + data.approvals[0].signature}" alt=""/>`);
+                    if(data.approvals[3]?.approval_date) {
+                        $('#doc_type03 .p_approverInfo04').html(`${data.approvals[3].approval_date.substring(0,10)}<br>${data.approvals[3].approver_name}<br><img src="${SERVER_URL + data.approvals[3].signature}" alt=""/>`);
+                        $('#doc_type03 .p_approverComment04').html(`${data.approvals[3]?.opinion ?? ''}`);
+                    }
+                    if(data.approvals[4]?.approval_date) $('#doc_type03 .p_approverInfo05').html(`${data.approvals[4].approval_date.substring(0,10)}<br>${data.approvals[4].approver_name}<br><img src="${SERVER_URL + data.approvals[4].signature}" alt=""/>`);
+                    if(data.approvals[5]?.approval_date) {
+                        $('#doc_type03 .p_approverInfo06').html(`${data.approvals[5].approval_date.substring(0,10)}<br>${data.approvals[5].approver_name}<br><img src="${SERVER_URL + data.approvals[5].signature}" alt=""/>`);
+                        $('#doc_type03 .p_approverComment06').html(`${data.approvals[5]?.opinion ?? ''}`);
+                    }
+
+                    // 중간에 껴있는 애들 (협력사대표, 작업허가자)
+                    if(data.approvals[1]?.approval_date) {
+                        $('#doc_type03 .p_approverInfo02').html(`${data.approvals[1].approval_date.substring(0,10)}<br>${data.approvals[1].approver_name}<br><img src="${SERVER_URL + data.approvals[1].signature}" alt=""/>`);
+                    }else {
+                        $('#doc_type03 .p_approverInfo02').html(`${data.approvals[1].approver_name ? data.approvals[1].approver_name + ' (인)' : ''}`);
+                    }
+                    if(data.approvals[2]?.approval_date) {
+                        $('#doc_type03 .p_approverInfo03').html(`${data.approvals[2].approval_date.substring(0,10)}<br>${data.approvals[2].approver_name}<br><img src="${SERVER_URL + data.approvals[2].signature}" alt=""/>`);
+                    }else {
+                        $('#doc_type03 .p_approverInfo03').html(`${data.approvals[2].approver_name ? data.approvals[2].approver_name + ' (인)' : ''}`);
+                    }
+
+                    $('#doc_type03 .p_user_name').html(data.user_name);
+                    $('#doc_type03 .p_created_at').html(data.created_at.substring(0,10));
+                    $('#doc_type03 .p_project_name').html(data.project_name);
+                    $('#doc_type03 .p_workTime').html(data.work_time.replaceAll("\n", "<br/>"));
+                    $('#doc_type03 .p_place').html(data.work_place?.place);
+                    $('#doc_type03 .p_workForce').html(data.work_force.replaceAll("\n", "<br/>"));
+                    $('#doc_type03 .p_workDetail').html(data.work_detail.replaceAll("\n", "<br/>"));
+                    $('#doc_type03 .p_safetyPrecaution').html(data.safety_precaution.replaceAll("\n", "<br/>"));
+
+                    let pCheckElem = `★ 사전 점검내용(O,X 표기, 해당 없을경우 N/A 표기)<br>`;
+                    pCheckElem += data.checks[0].question_detail + ` [&nbsp;&nbsp;&nbsp;]<br>`;
+                    pCheckElem += data.checks[1].question_detail + ` [&nbsp;&nbsp;&nbsp;]<br>`;
+                    pCheckElem += data.checks[2].question_detail + ` [&nbsp;&nbsp;&nbsp;]<br>`;
+                    pCheckElem += data.checks[3].question_detail + ` [&nbsp;&nbsp;&nbsp;]<br>`;
+                    pCheckElem += data.checks[4].question_detail + ` [&nbsp;&nbsp;&nbsp;]<br>`;
+                    pCheckElem += data.checks[5].question_detail + ` [&nbsp;&nbsp;&nbsp;]<br>`;
+                    pCheckElem += data.checks[6].question_detail + ` [&nbsp;&nbsp;&nbsp;]<br>`;
+                    pCheckElem += data.checks[7].question_detail + ` [&nbsp;&nbsp;&nbsp;]<br>`;
+
+                    pCheckElem += `
+                        &nbsp;&nbsp;&nbsp;☞ 작업 후 소등 및 정리정돈 최종 확인자(협력사 관리감독자) 성명 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(인)<br>
+                        <br>야간 작업의 경우 관리감독자 감독 하에 혈압 체크 확인 후 현장 투입
+                        <br>※ 야간작업 후 소등 확인 및 작업장 정리정돈 철저!
+                    `;
+
+                    $('#doc_type03 .p_check').html(pCheckElem);
+                    break;
+
+                /* 중량물 취급 계획서 시작 */
+                case 'DOC_OBJECT_HANDLING_PLAN' :
+                    $('#doc_type02 .p_project_user').html(data.project_name + ' / ' + data.user_name);
+                    $('#doc_type02 .p_constructionName').html(data.construction_name);
+                    $('#doc_type02 .p_place').html(data.work_place?.place);
+                    $('#doc_type02 .p_driver').html(data.driver);
+                    $('#doc_type02 .p_signalMan').html(data.signal_man);
+                    $('#doc_type02 .p_worker').html(data.worker);
+                    if(data.work_status_file?.file_path) {
+                        $('#doc_type02 .p_work_status_file').html(`<img src="${SERVER_URL + data.work_status_file?.file_path}" alt=""/>`);
+                    }
+
+                    $('#doc_type02 .p_nameNPms').html(data.name_npms);
+                    $('#doc_type02 .p_number').html(data.number);
+                    $('#doc_type02 .p_manufacturerNModelName').html(data.manufacturer_nmodel_name);
+                    if(data.commence_date) $('#doc_type02 .p_commenceDate').html(data.commence_date);
+                    if(data.duration_start_at && data.duration_end_at) $('#doc_type02 .p_durationAt').html(data?.duration_start_at + ' ~ ' + data?.duration_end_at);
+                    $('#doc_type02 .p_angle').html(data.angle);
+                    $('#doc_type02 .p_radius').html(data.radius);
+                    $('#doc_type02 .p_totalLengthNWeight').html(data.total_length_nweight);
+                    $('#doc_type02 .p_liftingLoad').html(data.lifting_load);
+                    $('#doc_type02 .p_name').html(data.name);
+                    $('#doc_type02 .p_sizeNWeight').html(data.size_nweight);
+                    $('#doc_type02 .p_transportDistance').html(data.transport_distance);
+                    $('#doc_type02 .p_transportUnit').html(data.transport_unit);
+                    $('#doc_type02 .p_material').html(data.material);
+                    $('#doc_type02 .p_method').html(data.method);
+                    $('#doc_type02 .p_specification').html(data.specification);
+                    $('#doc_type02 .p_deviceName').html(data.device_name);
+                    $('#doc_type02 .p_device').html(data.device);
+
+                    $('#doc_type02 .p_approverType01').html(data.approvals[0].approver_type);
+                    $('#doc_type02 .p_approverType02').html(data.approvals[1].approver_type);
+                    $('#doc_type02 .p_approverType03').html(data.approvals[2].approver_type);
+                    $('#doc_type02 .p_approverType04').html(data.approvals[3].approver_type);
+                    $('#doc_type02 .p_approverType05').html(data.approvals[4].approver_type);
+                    $('#doc_type02 .p_approverType06').html(data.approvals[5].approver_type);
+
+                    // 결재 정보
+                    if(data.approvals[0]?.approval_date) {
+                        $('#doc_type02 .p_approverInfo01').html(`${data.approvals[0].approval_date.substring(0,10)}<br>${data.approvals[0].approver_name}<br><img src="${SERVER_URL + data.approvals[0].signature}" alt=""/>`);
+                    }else {
+                        $('#doc_type02 .p_approverInfo01').html(`${data.approvals[0].approver_name ? data.approvals[0].approver_name + ' (인)' : ''}`);
+                    }
+                    if(data.approvals[1]?.approval_date) {
+                        $('#doc_type02 .p_approverInfo02').html(`${data.approvals[1].approval_date.substring(0,10)}&nbsp;&nbsp;${data.approvals[1].approver_name}&nbsp;&nbsp;<img src="${SERVER_URL + data.approvals[1].signature}" alt=""/>`);
+                    }else {
+                        $('#doc_type02 .p_approverInfo02').html(`${data.approvals[1].approver_name ? data.approvals[1].approver_name + ' (인)' : ''}`);
+                    }
+                    if(data.approvals[2]?.approval_date) $('#doc_type02 .p_approverInfo03').html(`${data.approvals[2].approval_date.substring(0,10)}<br>${data.approvals[2].approver_name}<br><img src="${SERVER_URL + data.approvals[2].signature}" alt=""/>`);
+                    if(data.approvals[3]?.approval_date) $('#doc_type02 .p_approverInfo04').html(`${data.approvals[3].approval_date.substring(0,10)}<br>${data.approvals[3].approver_name}<br><img src="${SERVER_URL + data.approvals[3].signature}" alt=""/>`);
+                    if(data.approvals[4]?.approval_date) $('#doc_type02 .p_approverInfo05').html(`${data.approvals[4].approval_date.substring(0,10)}<br>${data.approvals[4].approver_name}<br><img src="${SERVER_URL + data.approvals[4].signature}" alt=""/>`);
+                    if(data.approvals[5]?.approval_date) $('#doc_type02 .p_approverInfo06').html(`${data.approvals[5].approval_date.substring(0,10)}<br>${data.approvals[5].approver_name}<br><img src="${SERVER_URL + data.approvals[5].signature}" alt=""/>`);
+
+                    // 결재 코멘트
+                    let commentHtml = '';
+                    commentHtml += ((data.approvals[2]?.opinion ? data.approvals[2].approver_type + ' : ' + data.approvals[2]?.opinion : data.approvals[2].approver_type + ' : ') + '<br>');
+                    commentHtml += ((data.approvals[3]?.opinion ? data.approvals[3].approver_type + ' : ' + data.approvals[3]?.opinion : data.approvals[3].approver_type + ' : ') + '<br>');
+                    commentHtml += ((data.approvals[4]?.opinion ? data.approvals[4].approver_type + ' : ' + data.approvals[4]?.opinion : data.approvals[4].approver_type + ' : ') + '<br>');
+                    commentHtml += ((data.approvals[5]?.opinion ? data.approvals[5].approver_type + ' : ' + data.approvals[5]?.opinion : data.approvals[5].approver_type + ' : '));
+                    $('#doc_type02 .p_comment').html(commentHtml);
+
+                    let printRisksElem = `
+                        <tr>
+                            <td colspan="4" class="tleft bold">
+                                ▣ 작업(취급방법) 및 순서 / (추락/낙하/전도/협착/붕괴) 위험 예방대책<br>
+                                (Work(handling method) and sequence / (fail/conduction/stenosis/collapse) risk prevention measure)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공정<br>(process)</th>
+                            <th>작업내용/주요설비<br>(Work description/main equipment)</th>
+                            <th>위험요인<br>(Risk factors)</th>
+                            <th>예방대책<br>(prevention measures)</th>
+                        </tr>
+                    `;
+
+                    for(let i = 0; i < data.risks.length; i++) {
+                        printRisksElem += `
+                            <tr>
+                                <td>${data.risks[i].process.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.risks[i].details_nequipment.replaceAll("\n", "<br/>")}</td>
+                                <td>${data.risks[i].risk_factor.replaceAll("\n", "<br/>")}</td>
+                                <td class="tleft">${data.risks[i].prevention_measure.replaceAll("\n", "<br/>")}</td>
+                            </tr>
+                        `;
+                    }
+
+                    $('#doc_type02 .p_risks_tbody').html(printRisksElem);
+                    break;
+
+                /* 밀폐공간 작업허가서 시작 */
+                case 'DOC_SPACE_WORK_PERMIT' :
+                    $('#doc_type04 .p_project').html(data.project_name);
+                    $('#doc_type04 .p_createdAt').html(data.created_at.substring(0,10));
+                    $('#doc_type04 .p_constructionType').html(data.construction_type);
+                    $('#doc_type04 .p_userName').html(data.user_name);
+                    if(data.publication_start_at && data.publication_end_at) {
+                        $('#doc_type04 .p_publication').html(data.publication_start_at + ' ~ ' + data.publication_end_at);
+
+                        // 발생일자(시작일) ~ +6일 까지 총 7개 엘리먼트 셋팅(mm/dd)
+                        const value = data.publication_start_at;
+                        const date = new Date(value);
+
+                        // 발생일자(시작일) ~ +6일 까지 총 7개 엘리먼트 셋팅(mm/dd)
+                        $('.p_date_for_change').each(function(idx,elem) {
+                            $(elem).text(numberPad(date.getMonth()+1,2) + '/' + numberPad(date.getDate(),2));
+                            date.setDate(date.getDate() + 1);
+                        });
+                    }else {
+                        $('.p_date_for_change').each(function(idx,elem) {
+                            $(elem).text((idx+1)+'일 차');
+                        });
+                    }
+                    $('#doc_type04 .p_approverType01').html(data?.approvals[0]?.approver_type);
+                    $('#doc_type04 .p_approverType02').html(data?.approvals[1]?.approver_type);
+                    $('#doc_type04 .p_approverType03').html(data?.approvals[2]?.approver_type);
+                    $('#doc_type04 .p_approverType04').html(data?.approvals[3]?.approver_type);
+                    $('#doc_type04 .p_workTime').html(data.work_time);
+                    $('#doc_type04 .p_place').html(data.work_place.place);
+                    $('#doc_type04 .p_workLeader').html(data.work_leader);
+                    $('#doc_type04 .p_workForce').html(data.work_force);
+                    $('#doc_type04 .p_workDetail').html(data.work_detail);
+                    $('#doc_type04 .p_specialNote').html(data.special_note);
+                    $('#doc_type04 .p_dangerPoint').html(data.danger_point);
+                    $('#doc_type04 .p_memo').html(data.memo);
+
+                    /* 점검 사항들 */
+                    $('#doc_type04 .p_contents').each(function(idx, elem) {
+                        $(elem).html(data?.checks[idx]?.contents);
+                    });
+
+                    // 결재 정보
+                    if(data.approvals[0]?.approval_date) $('#doc_type04 .p_approverInfo01').html(`${data.approvals[0].approval_date.substring(0,10)}<br>${data.approvals[0].approver_name}<br><img src="${SERVER_URL + data.approvals[0].signature}" alt=""/>`);
+                    if(data.approvals[1]?.approval_date) $('#doc_type04 .p_approverInfo02').html(`${data.approvals[1].approval_date.substring(0,10)}<br>${data.approvals[1].approver_name}<br><img src="${SERVER_URL + data.approvals[1].signature}" alt=""/>`);
+                    if(data.approvals[2]?.approval_date) $('#doc_type04 .p_approverInfo03').html(`${data.approvals[2].approval_date.substring(0,10)}<br>${data.approvals[2].approver_name}<br><img src="${SERVER_URL + data.approvals[2].signature}" alt=""/>`);
+                    if(data.approvals[3]?.approval_date) $('#doc_type04 .p_approverInfo04').html(`${data.approvals[3].approval_date.substring(0,10)}<br>${data.approvals[3].approver_name}<br><img src="${SERVER_URL + data.approvals[3].signature}" alt=""/>`);
+
+                    // 안전지시 및 보완사항 - 결재 코멘트
+                    let commentHtml2 = '';
+                    commentHtml2 += ((data.approvals[1]?.opinion ? data.approvals[1].approver_type + ' : ' + data.approvals[1]?.opinion : data.approvals[1].approver_type + ' : ') + '<br>');
+                    commentHtml2 += ((data.approvals[2]?.opinion ? data.approvals[2].approver_type + ' : ' + data.approvals[2]?.opinion : data.approvals[2].approver_type + ' : ') + '<br>');
+                    commentHtml2 += ((data.approvals[3]?.opinion ? data.approvals[3].approver_type + ' : ' + data.approvals[3]?.opinion : data.approvals[3].approver_type + ' : '));
+                    $('#doc_type04 .p_comment').html(commentHtml2);
+
+                    break;
+
+                /* 위험성 평가표 시작 */
+                case 'DOC_RISK_ASSESSMENT_TABLE' :
+                    // $('#doc_type05 .p_document_name').html(data.document_name);
+                    $('#doc_type05 .p_assessment_target').html(data.assessment_target);
+                    $('#doc_type05 .p_assessment_date').html(data.assessment_date);
+                    $('#doc_type05 .p_created_at').html(data.created_at.substring(0,10));
+                    $('#doc_type05 .p_assessment_user').html(data.assessment_user);
+                    $('#doc_type05 .p_user_name').html(data.user_name);
+
+                    $('#doc_type05 .p_approverType01').html(data?.approvals[0]?.approver_type);
+                    $('#doc_type05 .p_approverType02').html(data?.approvals[1]?.approver_type);
+                    $('#doc_type05 .p_approverType03').html(data?.approvals[2]?.approver_type);
+                    $('#doc_type05 .p_approverType04').html(data?.approvals[3]?.approver_type);
+
+
+                    // $('#doc_type05 .aaaaaaaaaaaaaaaaaaaaaaaaaaaaa').html(data.aaaaaaaaaaaaaaaaaaaaaaaaaaaaa);
+
+                    $('#doc_type05 .p_items').html('');
+
+                    $(data?.items)?.each(function(idx, elem) {
+                        $('#doc_type05 .p_items').append(`
+                            <tr>
+                                <td style="white-space: pre; width:4em;">${idx+1}</td>
+                                <td style="white-space: pre; width:26em;">${elem?.contents}</td>
+                                <td style="white-space: pre; width:7em;">${elem?.risk_level}</td>
+                                <td style="white-space: pre; width:26em;">${elem?.improvement_measure}</td>
+                                <td style="white-space: pre; width:8em;">${elem?.improvement_due_date}</td>
+                                <td style="white-space: pre; width:8em;">${elem?.improvement_completion_date}</td>
+                                <td style="white-space: pre; width:8em;">${elem?.manager}</td>
+                            </tr>
+                        `);
+                    });
+
+                    // 결재 정보
+                    if(data.approvals[0]?.approval_date) $('#doc_type05 .p_approverInfo01').html(`${data.approvals[0].approval_date.substring(0,10)}<br>${data.approvals[0].approver_name}<br><img src="${SERVER_URL + data.approvals[0].signature}" alt=""/>`);
+                    if(data.approvals[1]?.approval_date) $('#doc_type05 .p_approverInfo02').html(`${data.approvals[1].approval_date.substring(0,10)}<br>${data.approvals[1].approver_name}<br><img src="${SERVER_URL + data.approvals[1].signature}" alt=""/>`);
+                    if(data.approvals[2]?.approval_date) $('#doc_type05 .p_approverInfo03').html(`${data.approvals[2].approval_date.substring(0,10)}<br>${data.approvals[2].approver_name}<br><img src="${SERVER_URL + data.approvals[2].signature}" alt=""/>`);
+                    if(data.approvals[3]?.approval_date) $('#doc_type05 .p_approverInfo04').html(`${data.approvals[3].approval_date.substring(0,10)}<br>${data.approvals[3].approver_name}<br><img src="${SERVER_URL + data.approvals[3].signature}" alt=""/>`);
+
+                    break;
+            }
+        }
+
+        // 기본 - 인쇄 버튼 클릭시 내용 셋팅 후 팝업 오픈
+        function clickPrintBtn(docType) {
+            let target = '';
+
+            switch (docType) {
+                case 'DOC_WORK_PERMIT' :            target = '#_pop_print_doc1'; break;
+                case 'DOC_TIME_WORK_PERMIT' :       target = '#_pop_print_doc3'; break;
+                case 'DOC_OBJECT_HANDLING_PLAN' :   target = '#_pop_print_doc2'; break;
+                case 'DOC_SPACE_WORK_PERMIT' :      target = '#_pop_print_doc4'; break;
+                case 'DOC_RISK_ASSESSMENT_TABLE' :  target = '#_pop_print_doc5'; break;
+            }
+
+            $(target).addClass('open');
+            $('body').append('<div class="popCover"></div>');
+            $('.popCover').fadeIn(300);
+            if($(target).find('.pop-closer, .popClose').length === 0) {
+                $(target).prepend('<span class="pop-closer">팝업닫기</span>');
+            }
+            $('body, html').css('overflow', 'hidden');
+            click_popClose();
+
+            $('html body .layer-popup').scrollTop(0);
+        }
+
+        // 날짜를 mm월 dd일 형태로 변환
+        function pChangeDateFormat(date) {
+            let month = ("0" + (1 + date.getMonth())).slice(-2);
+            let day = ("0" + date.getDate()).slice(-2);
+            return month + "월 " + day + '일';
+        }
+
+        // 선택 문서 인쇄 버튼 클릭시 전체 내용 셋팅 후 팝업 오픈
+        function showSelectedDocPrint(allContents) {
+            $('#print_all_main').html(allContents);
+            $('#print_all_main .print_doc_wrap').css('border-top','1px solid black');
+
+            const target = '#_pop_print_all';
+            $(target).addClass('open');
+            $('body').append('<div class="popCover"></div>');
+            $('.popCover').fadeIn(300);
+            if($(target).find('.pop-closer, .popClose').length === 0) {
+                $(target).prepend('<span class="pop-closer">팝업닫기</span>');
+            }
+            $('body, html').css('overflow', 'hidden');
+            click_popClose();
+
+            $('html body .layer-popup').scrollTop(0);
+
+            return true;
+        }
+
+        function addLine() {
+            $('#print_all_main .print_doc_wrap').css('border-top','1px solid black');
+        }
+
+        function removeLine() {
+            $('#print_all_main .print_doc_wrap').css('border-top','');
+        }
+
+        // 인쇄하기 버튼 클릭시
+        function docPrint(type, beforeFn, afterFn, isHorizontal=false) {
+            new Promise(resolve => {
+                resolve();
+            })
+            .then(() => {
+                if(beforeFn) beforeFn();
+                return true;
+            })
+            .then((result1) => {
+                if(result1) {
+                    let customStyle;
+                    // 가로 인쇄인 경우
+                    if(isHorizontal) customStyle = `
+                        @page { size: Letter landscape; }
+                        @media print { html, body { width:297mm !important;height:210mm !important; } }
+                    `;
+
+                    printJS({
+                        printable: type
+                        ,type: 'html'
+                        ,style: customStyle
+                        ,css: ['/assets/css/_reset.css', '/assets/css/style.css', '/assets/css/_util.css']
+                    });
+                }
+                return true;
+            })
+            .then((result2) => {
+                if(result2 && afterFn) afterFn();
+            });
+        }
+    </script>
+</div>
+</html>

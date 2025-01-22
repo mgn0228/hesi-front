@@ -1,0 +1,21 @@
+
+:root{
+	--nanumGothic:나눔고딕, 'NanumGothic', Nanum Gothic, sans-serif;
+}
+
+body[data-font-family='nanumGothic']{
+	--font-family:var(--nanumGothic);
+	--navSize:15px;
+	--fontSize:15px;
+	--fontSize-mini:11px;
+	--fontSize-small:12px;
+	--fontSize-large:15px;
+	--bold:600;
+	--container-title-weight:300;
+}
+
+/*─────────────────────────────────────────────────
+											font
+─────────────────────────────────────────────────*/
+.nanum{font-family:var(--nanumGothic) !important;font-weight:normal !important;}
+.nanum-bold{font-family:var(--nanumGothic) !important;font-weight:bold !important;}

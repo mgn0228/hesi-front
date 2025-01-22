@@ -1,0 +1,28 @@
+@import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+:root{
+	--SCoreDream:'SCoreDream',Apple SD Gothic Neo,Dotum,돋움,sans-serif;
+}
+
+body[data-font-family='SCoreDream']{
+	--font-family:var(--SCoreDream);
+	--navSize:15px;
+	--fontSize:15px;
+	--fontSize-mini:11px;
+	--fontSize-small:12px;
+	--fontSize-large:15px;
+	--bold:500;
+	--container-title-weight:300;
+}
+
+/*─────────────────────────────────────────────────
+											font
+─────────────────────────────────────────────────*/
+[class*="SCoreDream"]{font-family:var(--SCoreDream) !important;}
+.SCoreDream100{font-weight:100 !important;}
+.SCoreDream200{font-weight:200 !important;}
+.SCoreDream300{font-weight:300 !important;}
+.SCoreDream400{font-weight:400 !important;}
+.SCoreDream500{font-weight:500 !important;}
+.SCoreDream600{font-weight:600 !important;}
+.SCoreDream700{font-weight:700 !important;}

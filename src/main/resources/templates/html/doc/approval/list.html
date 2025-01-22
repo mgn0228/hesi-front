@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{comm/layout}">
+
+<div class="container" layout:fragment="content">
+    <div class="container-title">결재 문서함</div>
+
+    <div class="bo_head">
+        <div class="tbl_sort">
+            <select class="w-180 sm:w-full" id="is_only_me">
+                <option value="false" selected>전체보기</option>
+                <option value="true">내 문서만 보기</option>
+            </select>
+        </div>
+        <div class="boSearchContainer ml-auto">
+            <input type="text" id="s_searchValue" class="inp lg:w-330 sm:w-full" placeholder="문서 이름">
+            <button type="button" class="btnSearch">검색</button>
+        </div>
+    </div>
+
+    <div class="tableContainer approval_table">
+        <div class="table" data-mobile-ui-width="1200">
+            <div class="thead">
+                <div class="tr">
+                    <div class="cell_input"><label style="display: none;"><input class="check_parent" type="checkbox"></label></div>
+                    <div class="cell_num"><a href="#">No</a></div>
+                    <div class="cell_subject"><a href="#" onclick="sortEvent(this, 'DOCUMENT_NAME')" class="sort asc">문서 이름</a></div>
+                    <div class="cell_name"><a href="#" onclick="sortEvent(this, 'USER_NAME')" class="sort asc">작성자</a></div>
+                    <div class="cell_16"><a href="#" onclick="sortEvent(this, 'DOCUMENT_STATUS')" class="sort asc">문서 상태</a></div>
+                    <div class="cell_date"><a href="#" onclick="sortEvent(this, 'CREATE_AT')" class="sort asc">작성일</a></div>
+                    <div class="cell_date"><a href="#" onclick="sortEvent(this, 'APPROVAL_DATE')" class="sort asc">결재완료일</a></div>
+                    <div class="cell_btnSet"></div>
+                </div>
+            </div>
+            <ul class="tbody">
+            </ul>
+            <div class="flex flex-right gap10 mt10">
+                <button disabled onclick="clickSelectedDocPrint()" class="_btn/md/line" id="selected_doc_print">선택 문서 인쇄</button>
+            </div>
+        </div>
+    </div>
+    <nav class="pg_wrap">
+    </nav>
+</div>
+
+</html>
+
+<th:block th:insert="~{comm/fragment/print :: printFragment}"></th:block>
+<script th:src="@{/assets/js/controls/doc/approval/list.js}" type="text/javascript"></script>

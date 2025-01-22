@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{comm/layout}">
+
+<div id="mypage" class="container" layout:fragment="content">
+    <div class="container-title">나의 프로필 / 프로젝트 정보</div>
+    <form name="" action="" method="post">
+        <div class="flexboxContainer">
+            <div class="box flex flex-center flex-middle flex-column pb-60" style="width:588px;">
+                <div class="fxContainer gap15" id="my-profile">
+                    <div class="mt30 tcenter mb30">
+                        <img th:src="@{${session.userImg}}" class="mb_img">
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-label">이름</div>
+                        <div class="fx-con">
+                            <input type="text" name="" value="" class="w-200" id="my-name" disabled>
+                        </div>
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-label">이메일</div>
+                        <div class="fx-con">
+                            <input type="email" name="" value="" class="w-200" id="my-email" disabled>
+                        </div>
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-label">아이디</div>
+                        <div class="fx-con">
+                            <input type="text" name="" value="" class="w-200" id="my-id" disabled>
+                        </div>
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-label">비밀번호</div>
+                        <div class="fx-con">
+                            <span class="_btn/mainColor icon_write toggleClass pop-inline" data-href="#_pop_change_pw">변경하기</span>
+                        </div>
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-label">소속회사명</div>
+                        <div class="fx-con">
+                            <input type="text" name="" value="" class="w-200" id="my-projectName" disabled>
+                        </div>
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-label">전화번호</div>
+                        <div class="fx-con">
+                            <input type="tel" name="" value="" class="w-200" id="my-phone" disabled>
+                        </div>
+                    </div>
+                    <!--<div class="btnSet absolute">
+                        <button type="button" class="btnEdit">편집</button>
+                    </div>-->
+                </div>
+            </div>
+
+            <div class="flex flex-wrap flex1 gap25" id="my-project"></div>
+        </div>
+    </form>
+</div>
+
+<article class="layer-popup" id="_pop_change_pw" layout:fragment="popup">
+    <div class="popContainer" style="width:100%;max-width:600px;">
+        <button type="button" class="pop-closer"></button>
+        <div class="inner lg:p-25">
+            <div class="popCon-header">
+                비밀번호 변경하기
+            </div>
+            <form name="" action="" method="post">
+                <div class="fxContainer/column gap15" style="margin:0 auto;max-width:300px;">
+                    <div class="fx-list">
+                        <div class="fx-label">기존 비밀번호</div>
+                        <div class="fx-con">
+                            <input id="before_password" type="password" name="" class="w-full" placeholder="기존 비밀번호를 입력해주세요." autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-label">새 비밀번호</div>
+                        <div class="fx-con">
+                            <input id="password" type="password" name="" class="w-full" placeholder="새 비밀번호를 입력해주세요." autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-label">새 비밀번호 확인</div>
+                        <div class="fx-con">
+                            <input id="confirm_password" type="password" name="" class="w-full" placeholder="새 비밀번호를 다시 입력해주세요." autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="btnSet pt-20 border-top flex-end flex-right mt50">
+                    <a href="#" class="_btn/md/line popClose">취소</a>
+                    <a href="#" class="_btn/md/mainColor" onclick="changePw()">변경</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</article>
+
+</html>
+
+<script th:src="@{/assets/js/controls/mypage.js}" type="text/javascript"></script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<th:block th:fragment="addProjectFragment">
+    <article class="layer-popup" id="_pop_project_add">
+        <div class="popContainer" style="width:100%;max-width:650px;">
+            <div class="inner lg:p-60">
+                <div class="h1 fw500 tcenter mb30"><p class="mb15"><img src="/assets/img/SAFFYlogo.svg" style="width:130px"><p>프로젝트 추가하기</div>
+
+                <form name="" action="" method="post">
+                    <div class="fxContainer/column gap25">
+                        <div class="fx-list">
+                            <div class="fx-label">프로젝트 이름</div>
+                            <div class="fx-con">
+                                <label>
+                                    <input id="name" type="text" name="" value="" class="w-full" placeholder="프로젝트명을 입력하세요.">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="h5 hr mt10 mb5">현장개요</div>
+                        <div class="fx-list">
+                            <div class="fx-label">프로젝트 시작일</div>
+                            <div class="fx-con">
+                                <label class="datepicker-wrap lg:w-260 sm:w-full">
+                                    <input id="start_at" type="text" name="" value="" class="datepicker" readonly >
+                                    <span class="icon_datepicker"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="fx-list">
+                            <div class="fx-label">프로젝트 종료일</div>
+                            <div class="fx-con">
+                                <label class="datepicker-wrap lg:w-260 sm:w-full">
+                                    <input id="end_at" type="text" name="" value="" class="datepicker" readonly >
+                                    <span class="icon_datepicker"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="fx-list">
+                            <div class="fx-label">현장 주소</div>
+                            <div class="fx-con flex">
+                                <input id="address" type="text" name="" value="" class="flex1" readonly placeholder="주소 검색을 클릭하세요">
+                                <button type="button" class="_btn/green nowrap" onclick="openAddressSearch()">주소 검색</button>
+                            </div>
+                        </div>
+                        <div class="fx-list">
+                            <div class="fx-label">인원</div>
+                            <div class="fx-con">
+                                <div class="count-wrap">
+                                    <button type="button" class="minus">감소</button>
+                                    <input id="max_user_count" type="number" class="" min="1" max="999" value="1" oninput="inputOnlyNumber(this)"/>
+                                    <button type="button" class="plus">증가</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fx-list">
+                            <div class="fx-label">현장 설명</div>
+                            <div class="fx-con">
+                                <textarea id="contents" name="" class="h-180"></textarea>
+                            </div>
+                        </div>
+                        <div class="fx-list">
+                            <div class="fx-label">프로젝트 이미지</div>
+                            <div class="fx-con">
+                                <div class="fileContainer">
+                                    <label class="uploadSet">
+                                        <input id="image" type="file" name="" class="img" accept="image/*">
+                                        <input id="image_name" type="text" class="upload-name" readonly placeholder="파일선택 없음">
+                                        <span id="image_btn" class="upload-btn _btn/green">이미지 업로드</span>
+                                    </label>
+                                    <p class="help-block color-gray mt10">
+                                        <!-- - 업로드 가능한 사이즈 : 최대 375 X 180<br>-->
+                                        - 업로드 가능 확장자 : gif, jpg, jpeg, png, bmp<br>
+                                        - 업로드 가능 용량 : 10MB 미만
+                                    </p>
+                                    <div class="upImg-preview"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btnSet mt50">
+                        <a href="#" class="_btn/lg/mainColor w-full" onclick="project()">프로젝트 추가</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </article>
+</th:block>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

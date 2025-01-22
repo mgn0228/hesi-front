@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{comm/layout}">
+
+<div class="container" layout:fragment="content">
+    <div class="data_form_head">
+        <div class="form_headSet" id="doc_info"></div>
+        <div class="form_btnSet"></div>
+    </div>
+
+    <div class="data_form_container">
+        <div class="fxContainer/wrap">
+            <div class="w-full h5">작업개요</div>
+            <div class="fx-list gap10">
+                <div class="fx-label tag">업체명</div>
+                <div class="fx-con">
+                    <input id="d_project" type="text" readonly>
+                </div>
+            </div>
+            <div class="fx-list gap10">
+                <div class="fx-label tag">작업 장소</div>
+                <div class="fx-con">
+                    <input id="d_place" type="text" readonly>
+                </div>
+            </div>
+            <div class="fx-list gap10">
+                <div class="fx-label tag">허가 기간</div>
+                <div class="fx-con flex">
+                    <label class="datepicker-wrap lg:w-180 sm:w-full">
+                        <input id="d_permissionPeriodStartAt" type="text" readonly>
+                    </label>~
+                    <label class="datepicker-wrap lg:w-180 sm:w-full">
+                        <input id="d_permissionPeriodEndAt" type="text" readonly>
+                    </label>
+                </div>
+            </div>
+
+            <div class="w-full h5">결재정보</div>
+            <div class="fx-list gap10">
+                <div class="fx-label tag">결재1</div>
+                <div class="fx-con flex">
+                    <input id="d_approverType01" type="text" class="lg:w-100" readonly>
+                    <select disabled class="temp_approval_select">
+                        <option>결재자 선택</option>
+                    </select>
+                    <span id="d_approver01" class="sign-box temp_approval"></span>
+                </div>
+            </div>
+            <div class="fx-list gap10">
+                <div class="fx-label tag">결재2</div>
+                <div class="fx-con flex">
+                    <input id="d_approverType02" type="text" class="lg:w-100" readonly>
+                    <select disabled class="temp_approval_select">
+                        <option>결재자 선택</option>
+                    </select>
+                    <span id="d_approver02" class="sign-box temp_approval"></span>
+                </div>
+            </div>
+            <div class="fx-list gap10">
+                <div class="fx-label tag">결재3</div>
+                <div class="fx-con flex">
+                    <input id="d_approverType03" type="text" class="lg:w-100" readonly>
+                    <select disabled class="temp_approval_select">
+                        <option>결재자 선택</option>
+                    </select>
+                    <span id="d_approver03" class="sign-box temp_approval"></span>
+                </div>
+            </div>
+            <div class="fx-list gap10">
+                <div class="fx-label tag">결재4</div>
+                <div class="fx-con flex">
+                    <input id="d_approverType04" type="text" class="lg:w-100" readonly>
+                    <select disabled class="temp_approval_select">
+                        <option>결재자 선택</option>
+                    </select>
+                    <span id="d_approver04" class="sign-box temp_approval"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="mt30 mb30">
+
+        <div class="tableContainer scroll-x">
+            <table class="form_tbl" style="min-width:1000px;">
+                <colgroup>
+                    <col width="150">
+                    <col>
+                    <col width="120">
+                    <col width="120">
+                    <col width="200">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>공사명<br><small>(Work Name)</small></th>
+                    <th>작업내용<br><small>(Work content)</small></th>
+                    <th>작업 팀장/반장<br><small>(Supervisor)</small></th>
+                    <th>투입 장비<br><small>(Equipment)</small></th>
+                    <th>기계 기구 현황<br><small>(Machinery equipment status)</small></th>
+                </tr>
+                </thead>
+                <tbody id="d_details">
+                <tr>
+                    <td><textarea name="constructionName" class="w-full d_constructionName" readonly></textarea></td>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="worker" class="w-full d_worker" readonly></textarea></td>
+                    <td><textarea name="equipment" class="w-full d_equipment" readonly></textarea></td>
+                    <td><textarea name="mechanicalEquipmentStatus" class="w-full d_mechanicalEquipmentStatus" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea name="constructionName" class="w-full d_constructionName" readonly></textarea></td>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="worker" class="w-full d_worker" readonly></textarea></td>
+                    <td><textarea name="equipment" class="w-full d_equipment" readonly></textarea></td>
+                    <td><textarea name="mechanicalEquipmentStatus" class="w-full d_mechanicalEquipmentStatus" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea name="constructionName" class="w-full d_constructionName" readonly></textarea></td>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="worker" class="w-full d_worker" readonly></textarea></td>
+                    <td><textarea name="equipment" class="w-full d_equipment" readonly></textarea></td>
+                    <td><textarea name="mechanicalEquipmentStatus" class="w-full d_mechanicalEquipmentStatus" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea name="constructionName" class="w-full d_constructionName" readonly></textarea></td>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="worker" class="w-full d_worker" readonly></textarea></td>
+                    <td><textarea name="equipment" class="w-full d_equipment" readonly></textarea></td>
+                    <td><textarea name="mechanicalEquipmentStatus" class="w-full d_mechanicalEquipmentStatus" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea name="constructionName" class="w-full d_constructionName" readonly></textarea></td>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="worker" class="w-full d_worker" readonly></textarea></td>
+                    <td><textarea name="equipment" class="w-full d_equipment" readonly></textarea></td>
+                    <td><textarea name="mechanicalEquipmentStatus" class="w-full d_mechanicalEquipmentStatus" readonly></textarea></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tableContainer mt40 scroll-x">
+            <table class="form_tbl" style="min-width:1000px;">
+                <colgroup>
+                    <col width="220">
+                    <col>
+                    <col width="100">
+                    <col width="100">
+                    <col width="100">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th rowspan="2">작업내용<br><small>(Work Content)</small></th>
+                    <th rowspan="2">위험요인<br><small>(Hazard Factors)</small></th>
+                    <th colspan="3">평가 등급<br><small>(Assessment Grade)</small></th>
+                    <th rowspan="2">위험 저감 대책<br><small>(Hazard Mitigation Measures)</small></th>
+                </tr>
+                <tr>
+                    <th>발생빈도<br><small>(Frequency)</small></th>
+                    <th>위험강도<br><small>(Intensity)</small></th>
+                    <th>평가결과<br><small>(Grade)</small></th>
+                </tr>
+                </thead>
+                <tbody id="d_risks">
+                <tr>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="riskFactor" class="w-full d_riskFactor" readonly></textarea></td>
+                    <td><textarea name="occurrenceFrequency" class="w-full d_occurrenceFrequency" readonly></textarea></td>
+                    <td><textarea name="riskIntensity" class="w-full d_riskIntensity" readonly></textarea></td>
+                    <td><textarea name="evaluationResult" class="w-full d_evaluationResult" readonly></textarea></td>
+                    <td><textarea name="riskReductionMeasure" class="h-50 w-full d_riskReductionMeasure" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="riskFactor" class="w-full d_riskFactor" readonly></textarea></td>
+                    <td><textarea name="occurrenceFrequency" class="w-full d_occurrenceFrequency" readonly></textarea></td>
+                    <td><textarea name="riskIntensity" class="w-full d_riskIntensity" readonly></textarea></td>
+                    <td><textarea name="evaluationResult" class="w-full d_evaluationResult" readonly></textarea></td>
+                    <td><textarea name="riskReductionMeasure" class="h-50 w-full d_riskReductionMeasure" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="riskFactor" class="w-full d_riskFactor" readonly></textarea></td>
+                    <td><textarea name="occurrenceFrequency" class="w-full d_occurrenceFrequency" readonly></textarea></td>
+                    <td><textarea name="riskIntensity" class="w-full d_riskIntensity" readonly></textarea></td>
+                    <td><textarea name="evaluationResult" class="w-full d_evaluationResult" readonly></textarea></td>
+                    <td><textarea name="riskReductionMeasure" class="h-50 w-full d_riskReductionMeasure" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="riskFactor" class="w-full d_riskFactor" readonly></textarea></td>
+                    <td><textarea name="occurrenceFrequency" class="w-full d_occurrenceFrequency" readonly></textarea></td>
+                    <td><textarea name="riskIntensity" class="w-full d_riskIntensity" readonly></textarea></td>
+                    <td><textarea name="evaluationResult" class="w-full d_evaluationResult" readonly></textarea></td>
+                    <td><textarea name="riskReductionMeasure" class="h-50 w-full d_riskReductionMeasure" readonly></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea name="workDetail" class="w-full d_workDetail" readonly></textarea></td>
+                    <td><textarea name="riskFactor" class="w-full d_riskFactor" readonly></textarea></td>
+                    <td><textarea name="occurrenceFrequency" class="w-full d_occurrenceFrequency" readonly></textarea></td>
+                    <td><textarea name="riskIntensity" class="w-full d_riskIntensity" readonly></textarea></td>
+                    <td><textarea name="evaluationResult" class="w-full d_evaluationResult" readonly></textarea></td>
+                    <td><textarea name="riskReductionMeasure" class="h-50 w-full d_riskReductionMeasure" readonly></textarea></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <input type="hidden" th:value="${id}" id="docId"/>
+    <input type="hidden" th:value="${menuType}" id="menuType"/>
+</div>
+
+<div layout:fragment="popup">
+    <!-- 결제 영역 -->
+    <article class="layer-popup" id="_pop_doc_sign">
+        <div class="popContainer" style="min-width: 350px; max-width: 350px;">
+            <button type="button" class="pop-closer" onclick="clear()"></button>
+            <div class="inner lg:p-25">
+                <div class="popCon-header">전자서명</div>
+                <div class="signform">
+                    <canvas></canvas>
+                </div>
+                <div class="flex mt15">
+                    <a href="javascript:clear()" class="icon_sign_cancel ml-auto">되돌리기</a>
+                </div>
+                <div id="signature-comment-box" style="display: none;">
+                    <div class="h6 mt15 mb10">의견(Comment)</div>
+                    <textarea id="opinion" class="w-full h-100" oninput="docTextareaControl(this,1,50)"></textarea>
+                </div>
+                <div class="btnSet mt15">
+                    <a href="javascript:save()" class="_btn/md/mainColor ml-auto">확인</a>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+</html>
+
+<th:block th:insert="~{comm/fragment/print :: printFragment}"></th:block>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+<script th:src="@{/assets/js/controls/comm/doc.js}" type="text/javascript"></script>
+<script th:src="@{/assets/js/controls/doc/common/detail/work_permit.js}" type="text/javascript"></script>

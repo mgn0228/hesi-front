@@ -1,0 +1,13 @@
+
+
+.tagsinput{background: #FFF;padding:5px 6px;/*width:auto;*/height:auto;overflow-y:auto;border:1px solid rgba(0,0,0,0.2);border-radius:6px;display:flex;align-items:center;flex-wrap:wrap;gap:5px;}
+.tagsinput:before{content:'\e484';font-family:'newfont';font-size:17px;color:rgba(0,0,0,0.3);font-weight:normal;margin-left:2px;transform:scaleX(-1);}
+.tagsinput input{min-width:80px;width:auto;height:30px;font-size:13px;color:#c1c1c1;margin:0;border:0;padding:5px;background:transparent;outline:0;}
+.tagsinput span.tag{position:relative;font-size:13px;color:#485b20;background:rgba(71,78,103,0.07);height:24px;padding:0 6px;border-radius:5px;text-decoration:none;
+	display:inline-flex;align-items:center;justify-content:center;gap:3px;}
+.tagsinput span.tag:before{content:'#';}
+.tagsinput span.tag .Removing{font-size:0;color:rgba(0,0,0,0.5);cursor:pointer;width:14px;height:14px;margin-right:-3px;display:inline-flex;align-items:center;justify-content:center;transition:all .2s ease-in-out;}
+.tagsinput span.tag .Removing:before{content:'\e935';font-family:'intaefont';font-size:10px;transform:scale(0.7);}
+.tagsinput span.tag .Removing:hover{color:var(--red);}
+.tags_clear{clear:both;width:100%;height:0px;}
+.not_valid{background:#FBD8DB !important;color:#90111A !important;}

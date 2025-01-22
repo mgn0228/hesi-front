@@ -1,0 +1,30 @@
+@import url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css');
+
+:root{
+	--nanumSN:'NanumSquareNeo',Apple SD Gothic Neo,Dotum,돋움,sans-serif;
+}
+
+body[data-font-family='nanumSN']{
+	--font-family:var(--nanumSN);
+	--navSize:15px;
+	--fontSize:15px;
+	--fontSize-mini:11px;
+	--fontSize-small:12px;
+	--fontSize-large:15px;
+	--bold:700;
+	--container-title-weight:600;
+}
+
+/*─────────────────────────────────────────────────
+											font
+─────────────────────────────────────────────────*/
+[class*="nanumSN"]{font-family:var(--nanumSN) !important;font-weight:normal;}
+.nanumSN100{font-weight:100 !important;}
+.nanumSN200{font-weight:200 !important;}
+.nanumSN300{font-weight:300 !important;}
+.nanumSN400{font-weight:400 !important;}
+.nanumSN500{font-weight:500 !important;}
+.nanumSN600{font-weight:600 !important;}
+.nanumSN700{font-weight:700 !important;}
+.nanumSN800{font-weight:800 !important;}
+.nanumSN900{font-weight:900 !important;}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{comm/fragment/head :: headFragment}"></th:block>
+
+    <style>
+        .h-730{
+            min-height:730px!important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="fadeIn-loader"></div>
+
+<div id="wrapper">
+    <div class="container" id="login-wrap">
+        <form>
+            <section id="loginContainer">
+                <div class="h1 title tcenter mb40">LOGIN</div>
+                <div class="fxContainer/column gap25">
+                    <div class="fx-list">
+                        <div class="fx-label">아이디</div>
+                        <div class="fx-con">
+                            <label>
+                                <input class="w-full" id="form_id" name="" placeholder="ID" type="text" value="">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-label">비밀번호</div>
+                        <div class="fx-con">
+                            <label>
+                                <input autocomplete="off" class="w-full" id="form_pw" placeholder="PASSWORD" type="password">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="fx-list">
+                        <div class="fx-con">
+                            <label>
+                                <input class="" data-label="아이디 저장" id="form_id_save" name="" type="checkbox" value="">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btnSet mt20">
+                    <button class="_btn/lg/mainColor w-full" onclick="login()" type="button">로그인</button>
+                </div>
+                <div class="btnSet mt20" id="error_msg_parent" style="display: none;">
+                    <p class="color-red fs16" id="error_msg"></p>
+                </div>
+            </section>
+        </form>
+    </div>
+</div>
+
+<th:block th:insert="~{comm/fragment/footer :: footerFragment}"></th:block>
+
+<script th:inline="javascript">
+    const REQ_URL = [[${reqUrl}]];
+    const STATUS_CODE = [[${statusCode}]];
+</script>
+
+<script th:src="@{/assets/js/controls/login.js}" type="text/javascript"></script>
+
+</body>
+</html>
